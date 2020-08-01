@@ -29,4 +29,9 @@ public class StringCalculatorShould {
   void returns_correct_output_with_newline_input() {
     assertEquals(6, stringCalculator.add("1\n2,3"));
   }
+
+  @Test
+  void returns_correct_output_with_custom_separators() {
+    assertEquals(3, stringCalculator.add("//;\n1;2"));
+  }
 }
