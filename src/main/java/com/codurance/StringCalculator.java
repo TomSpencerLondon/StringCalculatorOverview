@@ -6,9 +6,6 @@ public class StringCalculator {
   public int add(String input) {
     StringBuilder regex = new StringBuilder("\\n,");
     StringBuilder result = new StringBuilder();
-    if (input.length() < 1) {
-      return 0;
-    }
 
     if (input.startsWith("//")){
       regex.append(input, input.indexOf("//"), input.indexOf("\n"));
