@@ -10,8 +10,7 @@ public class StringCalculator {
     }
 
     if (input.startsWith("//")){
-      regex.append(input.substring(input.indexOf("//"), input.indexOf("\n")));
-      regex.toString().replaceAll("\\[\\]", "");
+      regex.append(input, input.indexOf("//"), input.indexOf("\n"));
       input = input.substring(input.indexOf("\n")).trim();
     }
 
