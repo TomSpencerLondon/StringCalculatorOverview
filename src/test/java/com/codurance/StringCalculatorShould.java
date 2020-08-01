@@ -5,6 +5,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class StringCalculatorShould {
 
@@ -33,5 +34,12 @@ public class StringCalculatorShould {
   @Test
   void returns_correct_output_with_custom_separators() {
     assertEquals(3, stringCalculator.add("//;\n1;2"));
+  }
+
+  @Test
+  void throws_exception_for_input_less_than_zero() {
+    assertThrows(IllegalArgumentException.class, () -> {
+      stringCalculator.add("1,-2,-3");
+    });
   }
 }
