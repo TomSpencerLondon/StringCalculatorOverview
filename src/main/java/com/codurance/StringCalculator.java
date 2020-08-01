@@ -12,10 +12,7 @@ public class StringCalculator {
 
     if (input.startsWith("//")){
       input = input.substring(input.indexOf("\n")).trim();
-      System.out.println(input);
       regex.append(";***");
-      System.out.println(regex);
-      System.out.println(Arrays.toString(input.split("[" + regex + "]")));
     }
 
   return Arrays.stream(input.split("[" + regex + "]"))
