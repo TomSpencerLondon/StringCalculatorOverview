@@ -5,16 +5,19 @@ import java.util.Arrays;
 public class StringCalculator {
   public int add(String input) {
     StringBuilder regex = new StringBuilder("\\n,");
+    StringBuilder result = new StringBuilder();
     if (input.length() < 1) {
       return 0;
     }
 
     if (input.startsWith("//")){
       regex.append(input, input.indexOf("//"), input.indexOf("\n"));
-      input = input.substring(input.indexOf("\n")).trim();
+      result.append(input.substring(input.indexOf("\n")).trim());
+    }else {
+      result.append(input);
     }
 
-  return Arrays.stream(input.split("[" + regex + "]"))
+  return Arrays.stream(result.toString().split("[" + regex + "]"))
           .map(String::strip)
           .filter(i -> !i.isBlank())
           .mapToInt(Integer::parseInt)
