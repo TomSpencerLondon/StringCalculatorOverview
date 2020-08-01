@@ -5,7 +5,6 @@ import java.util.Arrays;
 public class StringCalculator {
   public int add(String input) {
     StringBuilder regex = new StringBuilder("\\n,");
-
     if (input.length() < 1) {
       return 0;
     }
@@ -14,7 +13,6 @@ public class StringCalculator {
       regex.append(input.substring(input.indexOf("//"), input.indexOf("\n")));
       regex.toString().replaceAll("\\[\\]", "");
       input = input.substring(input.indexOf("\n")).trim();
-//      regex.append(";***");
     }
 
   return Arrays.stream(input.split("[" + regex + "]"))
