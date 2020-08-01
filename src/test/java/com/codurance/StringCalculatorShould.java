@@ -9,8 +9,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class StringCalculatorShould {
   @ParameterizedTest
   @CsvSource(value = {
+          "''; 0",
           "0, 0; 0",
-          "1, 0; 1"
+          "1, 0; 1",
   }, delimiter = ';')
   void return_correct_addition_output_for_string_numbers(String input, int output) {
     StringCalculator stringCalculator = new StringCalculator();
