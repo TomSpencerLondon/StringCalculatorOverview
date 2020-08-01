@@ -12,11 +12,15 @@ public class StringCalculator {
 
     if (input.startsWith("//")){
       input = input.substring(input.indexOf("\n")).trim();
-      regex.append(";");
+      System.out.println(input);
+      regex.append(";***");
+      System.out.println(regex);
+      System.out.println(Arrays.toString(input.split("[" + regex + "]")));
     }
 
   return Arrays.stream(input.split("[" + regex + "]"))
           .map(String::strip)
+          .filter(i -> !i.isBlank())
           .mapToInt(Integer::parseInt)
           .filter(n -> n <= 1000)
           .peek(n -> {

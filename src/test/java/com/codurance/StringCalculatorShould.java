@@ -47,4 +47,9 @@ public class StringCalculatorShould {
   void ignore_numbers_more_than_1000() {
     assertEquals(2, stringCalculator.add("1001, 2"));
   }
+
+  @Test
+  void adds_numbers_with_arbitrary_length_separators() {
+    assertEquals(6, stringCalculator.add("//[***]\n1***2***3"));
+  }
 }
