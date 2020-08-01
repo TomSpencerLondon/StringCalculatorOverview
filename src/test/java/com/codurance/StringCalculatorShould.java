@@ -52,4 +52,9 @@ public class StringCalculatorShould {
   void adds_numbers_with_arbitrary_length_separators() {
     assertEquals(6, stringCalculator.add("//[***]\n1***2***3"));
   }
+
+  @Test
+  void adds_numbers_with_multiple_single_separators() {
+    assertEquals(6, stringCalculator.add("//[*][%]\n1*2%3"));
+  }
 }
