@@ -18,6 +18,7 @@ public class StringCalculator {
   return Arrays.stream(input.split("[" + regex + "]"))
           .map(String::strip)
           .mapToInt(Integer::parseInt)
+          .filter(n -> n <= 1000)
           .peek(n -> {
             if (n < 0) throw new IllegalArgumentException("Negatives not allowed");
           }).sum();

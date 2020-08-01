@@ -42,4 +42,9 @@ public class StringCalculatorShould {
       stringCalculator.add("1,-2,-3");
     });
   }
+
+  @Test
+  void ignore_numbers_more_than_1000() {
+    assertEquals(2, stringCalculator.add("1001, 2"));
+  }
 }
