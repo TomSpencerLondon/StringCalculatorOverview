@@ -1,11 +1,15 @@
 package com.codurance;
 
+import java.util.Arrays;
+
 public class StringCalculator {
   public int add(String input) {
-    if(input.length() < 1){
+    if (input.length() < 1) {
       return 0;
     }
-    return Integer.parseInt(input.split(",")[0])
-            + Integer.parseInt(input.split(",")[1].trim());
+
+  return Arrays.stream(input.split("\\n|,"))
+          .map(String::strip)
+          .mapToInt(Integer::parseInt).sum();
   }
 }
